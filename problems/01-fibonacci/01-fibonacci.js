@@ -3,7 +3,7 @@ Created June 14, 2020
 Last update: June 14, 2020.
 */
 
-let n=25;
+let n=103;  //largest integer that I can plug in without getting an answer that uses scientific notation
 let verb, trm;
 let fibStr = "";
 
