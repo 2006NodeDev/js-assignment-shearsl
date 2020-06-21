@@ -2,8 +2,11 @@
 Define function objectProperties(someObj)
 Print every property and it's value. */
 function twoDVector(xComp, yComp) {
+    //fields provided by the user
     this.xComp = xComp;
     this.yComp = yComp;
+    
+    //calculated fields using the provided fields above
     this.magnitude = Math.round(1000*Math.sqrt(Math.pow(xComp,2)+Math.pow(yComp,2))/1000);
     this.direction = Math.atan2(yComp, xComp);
     this.degDirection = Math.round(1000*this.direction*180/Math.PI)/1000;
@@ -23,6 +26,7 @@ let vectorH = new twoDVector(2*Math.sqrt(3), -2);
 
 let vectors = [vectorA, vectorB, vectorC, vectorD, vectorE, vectorF, vectorG, vectorH];
 
+//Prints the data of an individual vector object.
 let printVectorData = (vectorName)=>{
     for(const field in vectorName){
         console.log(`${field}: ${vectorName[field]}`);
@@ -30,4 +34,6 @@ let printVectorData = (vectorName)=>{
     console.log("\n");
 }
 
+//calls each element of the vectors array and sends it 
+//to the printVector function one element at a time
 vectors.forEach(printVectorData);
